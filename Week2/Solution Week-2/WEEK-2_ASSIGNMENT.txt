@@ -1,0 +1,51 @@
+ WEEK-2 ASSIGNMENT 
+
+1.Create table stud(id,name) (use I'd as primary key) stud_details(id,city,mobileno) (Use I'd as foreign key). 
+-->
+Create table stud
+(
+sid int primary key,
+sname text NOT NULL
+);
+-------------------------------------------------------------------------------
+Create table stud_details
+(
+sid references stud(sid),
+city text NOT NULL, 
+mobileno int
+) ;
+------------------------------------------------------------------------------
+2.Insert minimum 10 records for each table.
+-->insert into stud values(101,'OM');
+insert into stud values(102,'SAI');
+insert into stud values(103,'RAM');
+insert into stud values(104,'RADHA'); 
+insert into stud values(105,'KRISHNA');
+insert into stud values(106,'SHIV');
+insert into stud values(107,'JINAL');
+ insert into stud values(108,'PRATHANA');
+insert into stud values(109,'NETI');
+insert into stud values(110,'PRAPTI');
+
+-->insert into stud_details values(101,'Surat',9876554651);
+insert into stud_details values(102,'Bardoli',9876764321);
+insert into stud_details values(103,'Baben',9347754121);
+insert into stud_details values(104,'Mumbai',8764450921);
+insert into stud_details values(105,'Vadodara',9123552341);
+insert into stud_details values(106,'Surat',9876556321);
+insert into stud_details values(107,'Bardoli',76543090921);
+insert into stud_details values(108,'Mumbai',7654321098);
+insert into stud_details values(109,'Vadodara',9012308080);
+insert into stud_details values
+(110,'Bardoli',6543209876) ;
+-------------------------------------------------------------------------------
+3.Display whose students come from the city of Surat.
+-->select * from stud_details where city = 'surat';
+------------------------------------------------------------------------------
+4.Display the details of students whose city name starts with 'B'.
+-->select * from stud_details where city like 'B%';
+------------------------------------------------------------------------------
+5.Update mobile number of people coming from Surat. 
+-->update std_details 
+set mobno=9090808070
+ where city='Surat' and sid=101;
